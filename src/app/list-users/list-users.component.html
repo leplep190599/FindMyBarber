@@ -1,0 +1,43 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                            <div class="col-lg-6">
+                                <h4 class="title">List of Member</h4>
+                            </div>
+                            <div class="col-lg-6" class="text-right">
+                                <button class="btn btn-success btn-fill" [routerLink]="['/accounts/new']"><i class="fa fa-plus"></i></button>
+                            </div>
+                    </div>
+                    <div class="content table-responsive">
+                        <table class="table table-hover table-striped table-full-width"  datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+                            <thead>
+                            <tr>
+                                <th *ngFor="let cell of headerRow">{{ cell }}</th>
+                                <th class="text-right">Delete</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let user of userList; let i = index" >
+                                <td><a style="color: black" [routerLink]="['/accounts/edit/', user.id]">{{i + 1}}</a></td>
+                                <td><a style="color: black" [routerLink]="['/accounts/edit/', user.id]">{{user.id}}</a></td>
+                                <td><a style="color: black" [routerLink]="['/accounts/edit/', user.id]">{{user.username}}</a></td>
+                                <td><a style="color: black" [routerLink]="['/accounts/edit/', user.id]">{{user.name}}</a></td>
+                                <td><a style="color: black" [routerLink]="['/accounts/edit/', user.id]">{{user.role}}</a></td>
+                                <td><a style="color: black" [routerLink]="['/accounts/edit/', user.id]">{{user.phone_no}}</a></td>
+                                <td><a style="color: black" [routerLink]="['/accounts/edit/', user.id]">{{user.address}}</a></td>
+                                <td class="text-right">
+                                    <button *ngIf="user.role !== 'admin'" type="submit" class="btn btn-danger btn-fill" (click)="deleteUser(user)" ><i class="fa fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <div class="col-lg-6">
+                            <h4 class="title">List of Store</h4>
+                        </div>
+                        <div class="col-lg-6" class="text-right">
+                            <button class="btn btn-success btn-fill" routerLink="/store/new"><i class="fa fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="content table-responsive">
+                        <table class="table table-hover table-striped table-full-width"  datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+                            <thead>
+                            <tr>
+                                <th *ngFor="let cell of headerRow">{{ cell }}</th>
+                                <th class="text-right">Delete</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let store of storeList; let i = index">
+                                <td><a style="color: black" [routerLink]="['/store/edit/', store.id]">{{i +1}}</a></td>
+                                <td><a style="color: black" [routerLink]="['/store/edit/', store.id]">{{store.id}}</a></td>
+                                <td><a style="color: black" [routerLink]="['/store/edit/', store.id]">{{store.name}}</a></td>
+                                <td><a style="color: black" [routerLink]="['/store/edit/', store.id]">{{store.address}}</a></td>
+                                <td><a style="color: black" [routerLink]="['/store/edit/', store.id]">{{store.open_time | date:'shortTime'}}</a></td>
+                                <td><a style="color: black" [routerLink]="['/store/edit/', store.id]">{{store.close_time| date:'shortTime'}}</a></td>
+                                <td class="text-right"><button type="submit" class="btn btn-danger btn-fill" (click)="deleteStore(store)"><i class="fa fa-trash"></i></button></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

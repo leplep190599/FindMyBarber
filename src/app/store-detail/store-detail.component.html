@@ -1,0 +1,77 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Edit Store</h4>
+                    </div>
+                    <div class="content">
+                        <form [formGroup]="storeForm" (ngSubmit)="updateStore(storeForm.value)">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label>StoreID</label>
+                                        <input type="text" class="form-control" disabled placeholder="Store ID" formControlName="id">
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>Store name</label><font color="red">(*)</font>
+                                        <input type="text" class="form-control" placeholder="Store Name" formControlName="name">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>Owner</label><font color="red">(*)</font>
+                                        <input type="text" class="form-control" disabled placeholder="Username" formControlName="username">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Open</label><font color="red">(*)</font>
+                                        <input type="time" class="form-control" placeholder="Open" formControlName="open_time">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Close</label><font color="red">(*)</font>
+                                        <input type="time" class="form-control" placeholder="Close" formControlName="close_time">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Address</label><font color="red">(*)</font>
+                                        <input type="text" class="form-control" placeholder="Home Address" formControlName="address">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Description</label><font color="red">(*)</font>
+                                        <textarea rows="5" class="form-control" placeholder="Description" formControlName="description"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-info btn-fill pull-right">Update Profile</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

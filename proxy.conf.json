@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "https://isalon-server.herokuapp.com/api/v1/",
+    "secure": false,
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "logLevel": "debug"
+  }
+}
